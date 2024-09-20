@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REGISTRY = 'host.docker.internal:5001' // Replace with your registry address
-        IMAGE_NAME = 'superset'
+        IMAGE_NAME = 'dsoft/superset'
         TAG = 'latest'
     }
 
