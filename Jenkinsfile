@@ -1,10 +1,6 @@
 pipeline {
     agent any // This can be replaced with a specific label if needed
 
-    environment {
-        
-    }
-
     stages {
         stage('Checkout') {
             steps {
