@@ -71,6 +71,11 @@ CACHE_CONFIG = {
 }
 DATA_CACHE_CONFIG = CACHE_CONFIG
 
+ENABLE_CORS = True
+CORS_OPTIONS = {
+    "origins": ["http://localhost:5000"],
+}
+
 
 class CeleryConfig:
     broker_url = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_CELERY_DB}"
