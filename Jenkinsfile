@@ -1,6 +1,12 @@
 pipeline {
     agent any // This can be replaced with a specific label if needed
 
+    environment {
+        REGISTRY = 'host.docker.internal:5001' // Replace with your registry address
+        IMAGE_NAME = 'superset'
+        TAG = 'latest'
+    }
+
     stages {
         stage('Checkout') {
             steps {
