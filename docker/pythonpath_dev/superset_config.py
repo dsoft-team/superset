@@ -74,7 +74,16 @@ DATA_CACHE_CONFIG = CACHE_CONFIG
 ENABLE_CORS = True
 CORS_OPTIONS = {
     "origins": ["http://localhost:5000"],
+    "supports_credentials": True,
 }
+
+# Cấu hình cookie session
+SESSION_COOKIE_HTTPONLY = False  # Đảm bảo cookie là HttpOnly
+SESSION_COOKIE_SAMESITE = "Lax"  # Cho phép SameSite=None cho cross-origin requests
+SESSION_COOKIE_SECURE = False  # False nếu đang chạy môi trường HTTP
+
+HTTP_HEADERS={"X-Frame-Options":"ALLOWALL"}
+TALISMAN_ENABLED = False
 
 
 class CeleryConfig:
@@ -108,6 +117,8 @@ WEBDRIVER_BASEURL = "http://superset:8088/"  # When using docker compose baseurl
 # The base URL for the email report hyperlinks.
 WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
 SQLLAB_CTAS_NO_LIMIT = True
+
+
 
 #
 # Optionally import superset_config_docker.py (which will have been included on
